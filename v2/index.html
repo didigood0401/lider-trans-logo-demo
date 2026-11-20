@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Лидер Транс - сильные знаки и 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A2350;--navy2:#0F3170;--or:#F26A1B;--ink:#0B1220;--steel:#C9D1DC;--mut:#5B6577;--bg:#EEF0F3;--line:#DDE1E7}
+*{box-sizing:border-box;margin:0}
+body{font-family:Manrope,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+.w{max-width:1200px;margin:0 auto;padding:0 20px}
+.stage{position:relative;height:min(78vh,720px);min-height:520px;background:radial-gradient(120% 90% at 70% 30%,#1B2E57 0,#0B1220 60%,#05080F 100%);color:#fff;overflow:hidden}
+#c{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab}
+#c:active{cursor:grabbing}
+.ov{position:absolute;left:0;right:0;top:0;padding:34px 0;pointer-events:none}
+.ov h1{font-family:Unbounded;font-weight:900;font-size:clamp(28px,4.4vw,56px);line-height:1.02;letter-spacing:-.01em;max-width:620px}
+.ov h1 em{font-style:normal;color:var(--or)}
+.ov p{color:#B9C4D8;max-width:440px;margin-top:12px}
+.ctrl{position:absolute;left:0;right:0;bottom:22px}
+.ctrl .w{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.seg{display:flex;gap:6px;background:rgba(255,255,255,.08);padding:5px;border-radius:14px;backdrop-filter:blur(8px)}
+.seg button{font:600 14px Manrope;color:#DCE3EF;background:none;border:0;padding:9px 14px;border-radius:10px;cursor:pointer}
+.seg button.on{background:#fff;color:var(--ink)}
+.hint{font-size:13px;color:#8FA0BE}
+section{padding:64px 0 0}
+h2{font-family:Unbounded;font-weight:700;font-size:clamp(24px,3vw,34px);line-height:1.1}
+.lead{color:var(--mut);max-width:720px;margin:10px 0 26px}
+.marks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mk{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;cursor:pointer;transition:transform .25s,box-shadow .25s}
+.mk:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(0,0,0,.35)}
+.mk.on{outline:3px solid var(--or)}
+.mk .a{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:26px}
+.mk .a svg{width:100%;height:100%}
+.mk .m{padding:16px 18px 20px;border-top:1px solid var(--line)}
+.mk b{font-family:Unbounded;font-weight:700;font-size:15px}
+.mk span{display:block;color:var(--mut);font-size:14px;margin-top:4px}
+.mock{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.mo{border-radius:18px;overflow:hidden;aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center}
+.mo svg{width:100%;height:100%}
+.mo i{position:absolute;left:12px;bottom:10px;font-style:normal;font-size:12px;font-weight:600;opacity:.75}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.why div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
+.why b{font-family:Unbounded;font-weight:700;display:block;margin-bottom:6px}
+.why span{color:var(--mut)}
+.cta{margin:64px 0;background:var(--navy);color:#fff;border-radius:24px;padding:34px;display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+.cta b{font-family:Unbounded;font-size:22px}
+.cta a{background:var(--or);color:#fff;text-decoration:none;font-weight:800;padding:14px 22px;border-radius:12px}
+.cta span{color:#B9C4D8}
+@media(max-width:900px){.marks,.why{grid-template-columns:1fr}.mock{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<!-- плоские знаки (их же выдавливаем в 3D) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+ <symbol id="D" viewBox="0 0 120 120">
+  <path data-z="0" data-c="navy" d="M60 6C60 6 18 54 18 80a42 42 0 0 0 84 0C102 54 60 6 60 6Z" fill="var(--c1,#0A2350)"/>
+  <path data-z="1" data-c="white" d="M46 116 57 64h6l11 52Z" fill="var(--c3,#fff)"/>
+  <path data-z="2" data-c="or" d="M58.6 70h2.8v8h-2.8ZM58.3 85h3.4v10h-3.4ZM58 102h4v12h-4Z" fill="var(--c2,#F26A1B)"/>
+  <path data-z="2" data-c="or" d="M60 22 84 50 76 56 60 38 44 56 36 50Z" fill="var(--c2,#F26A1B)"/>
+ </symbol>
+ <symbol id="E" viewBox="0 0 120 120">
+  <path data-z="0" data-c="navy" d="M60 4 108 32V88L60 116 12 88V32Z" fill="var(--c1,#0A2350)"/>
+  <path data-z="1" data-c="white" d="M60 70 88 86V98L60 82 32 98V86Z" fill="var(--c3,#fff)"/>
+  <path data-z="1" data-c="white" d="M60 50 88 66V78L60 62 32 78V66Z" fill="var(--c3,#fff)"/>
+  <path data-z="2" data-c="or" d="M60 24 88 40V56L60 40 32 56V40Z" fill="var(--c2,#F26A1B)"/>
+ </symbol>
+ <symbol id="F" viewBox="0 0 120 120">
+  <path data-z="0" data-c="navy" d="M60 4a56 56 0 1 0 0.01 0Z" fill="var(--c1,#0A2350)"/>
+  <g data-z="1" data-c="steel" fill="var(--c4,#C9D1DC)"><circle cx="60" cy="13" r="3.6"/><circle cx="93.2" cy="26.8" r="3.6"/><circle cx="107" cy="60" r="3.6"/><circle cx="93.2" cy="93.2" r="3.6"/><circle cx="60" cy="107" r="3.6"/><circle cx="26.8" cy="93.2" r="3.6"/><circle cx="13" cy="60" r="3.6"/><circle cx="26.8" cy="26.8" r="3.6"/></g>
+  <path data-z="2" data-c="white" d="M30 40H64V52H56V84H44V52H42C41 68 37 80 28 86H22C30 76 30 62 30 40Z" fill="var(--c3,#fff)"/>
+  <path data-z="2" data-c="or" d="M66 40H98V52H88V84H76V52H66Z" fill="var(--c2,#F26A1B)"/>
+ </symbol>
+</defs></svg>
+
+<header class="stage">
+ <canvas id="c" aria-label="3D-модель знака"></canvas>
+ <div class="ov"><div class="w">
+  <h1>«Лидер Транс»: знак, который <em>видно с трассы</em></h1>
+  <p>Три новых направления - сильнее и дороже первых эскизов. Покрутите знак мышкой или пальцем, переключите на автоцистерну.</p>
+ </div></div>
+ <div class="ctrl"><div class="w">
+  <div class="seg" id="segM"><button data-m="D" class="on">D · Капля-магистраль</button><button data-m="E">E · Шевроны лидера</button><button data-m="F">F · Фланец ЛТ</button></div>
+  <div class="seg" id="segV"><button data-v="logo" class="on">Знак 3D</button><button data-v="truck">На цистерне</button></div>
+ </div></div>
+</header>
+
+<main class="w">
+<section>
+ <h2>Три сильных знака</h2>
+ <p class="lead">Простые крупные формы: читаются на борту цистерны с 50 метров, в иконке 16 px и на пломбе. Нажмите на знак - 3D-сцена и примерки перестроятся.</p>
+ <div class="marks" id="marks">
+  <div class="mk on" data-m="D"><div class="a"><svg viewBox="0 0 380 150"><use href="#D" x="0" y="15" width="120" height="120"/><text x="134" y="74" font-family="Unbounded" font-weight="900" font-size="31" fill="#0A2350">ЛИДЕР</text><text x="134" y="108" font-family="Unbounded" font-weight="900" font-size="31" fill="#F26A1B">ТРАНС</text><text x="135" y="128" font-family="Manrope" font-weight="800" font-size="10.5" letter-spacing="2.2" fill="#5B6577">НАЛИВНЫЕ ПЕРЕВОЗКИ</text></svg></div>
+   <div class="m"><b>D. Капля-магистраль</b><span>Капля нефтепродукта, внутри - трасса, над ней шеврон «вперёд». Груз, путь и лидерство в одном знаке.</span></div></div>
+  <div class="mk" data-m="E"><div class="a"><svg viewBox="0 0 380 150"><use href="#E" x="0" y="15" width="120" height="120"/><text x="134" y="74" font-family="Unbounded" font-weight="900" font-size="31" fill="#0A2350">ЛИДЕР</text><text x="134" y="108" font-family="Unbounded" font-weight="900" font-size="31" fill="#F26A1B">ТРАНС</text><text x="135" y="128" font-family="Manrope" font-weight="800" font-size="10.5" letter-spacing="2.2" fill="#5B6577">НАЛИВНЫЕ ПЕРЕВОЗКИ</text></svg></div>
+   <div class="m"><b>E. Шевроны лидера</b><span>Три шеврона - знак старшинства и движения вверх, в шестиграннике-гайке: техника, надёжность, стандарты.</span></div></div>
+  <div class="mk" data-m="F"><div class="a"><svg viewBox="0 0 380 150"><use href="#F" x="0" y="15" width="120" height="120"/><text x="134" y="74" font-family="Unbounded" font-weight="900" font-size="31" fill="#0A2350">ЛИДЕР</text><text x="134" y="108" font-family="Unbounded" font-weight="900" font-size="31" fill="#F26A1B">ТРАНС</text><text x="135" y="128" font-family="Manrope" font-weight="800" font-size="10.5" letter-spacing="2.2" fill="#5B6577">НАЛИВНЫЕ ПЕРЕВОЗКИ</text></svg></div>
+   <div class="m"><b>F. Фланец ЛТ</b><span>Монограмма в круге с 8 болтами - как люк цистерны. Сразу понятно: нефтепродукты и герметичность.</span></div></div>
+ </div>
+</section>
+
+<section>
+ <h2>Как знак работает в жизни</h2>
+ <p class="lead">Дорогой знак - тот, что одинаково силён на тёмном, на металле, на одежде и в телефоне.</p>
+ <div class="mock" id="mock">
+  <div class="mo" style="background:#0B1220;--c1:#fff;--c3:#0B1220"><svg viewBox="0 0 120 120"><use class="u" href="#D" x="25" y="22" width="70" height="70"/><text x="60" y="108" text-anchor="middle" font-family="Unbounded" font-weight="700" font-size="7" fill="#fff" letter-spacing="1">ЛИДЕР ТРАНС</text></svg><i style="color:#fff">Тёмный фон</i></div>
+  <div class="mo" style="background:linear-gradient(135deg,#E8ECF1,#AEB7C4 50%,#E3E7EC);--c1:#2B3442;--c3:#E8ECF1;--c2:#2B3442;--c4:#E8ECF1"><svg viewBox="0 0 120 120"><use class="u" href="#D" x="25" y="25" width="70" height="70"/></svg><i>Гравировка на металле</i></div>
+  <div class="mo" style="background:#1D2B44"><svg viewBox="0 0 120 120"><rect x="28" y="30" width="64" height="64" rx="14" fill="#0A2350" stroke="#F26A1B" stroke-width="2.5" stroke-dasharray="3 2"/><g style="--c1:#fff;--c3:#0A2350;--c4:#F26A1B"><use class="u" href="#D" x="38" y="40" width="44" height="44"/></g></svg><i style="color:#fff">Шеврон на спецовку</i></div>
+  <div class="mo" style="background:#F2F4F7"><svg viewBox="0 0 120 120"><rect x="32" y="32" width="56" height="56" rx="14" fill="#0A2350"/><g style="--c1:#F26A1B;--c3:#0A2350;--c2:#fff;--c4:#fff"><use class="u" href="#D" x="40" y="40" width="40" height="40"/></g></svg><i>Иконка приложения</i></div>
+ </div>
+</section>
+
+<section>
+ <h2>Почему это продаёт</h2>
+ <div class="why" style="margin-top:22px">
+  <div><b>Узнаётся за секунду</b><span>Один силуэт и два цвета. Водитель на трассе и диспетчер у клиента видят одно и то же.</span></div>
+  <div><b>Выглядит крупной компанией</b><span>Плотная геометрия и металл в 3D - уровень федеральных перевозчиков, а не «нарисовали в Ворде».</span></div>
+  <div><b>Готов к оклейке</b><span>Векторы SVG/PDF/CDR, одноцветная версия для пломб и гравировки, цвета под плёнку Oracal.</span></div>
+ </div>
+</section>
+
+<div class="cta"><div><b>Доведу выбранный знак за 4 дня</b><br><span>Правки без ограничения, полный пакет файлов и мини-гайд.</span></div><a href="https://didigood0401.github.io/lider-trans-logo-demo/">Первые эскизы A-B-C →</a></div>
+</main>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {SVGLoader} from 'three/addons/loaders/SVGLoader.js';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
+
+const cv=document.getElementById('c');
+const R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+R.setPixelRatio(Math.min(devicePixelRatio,2));R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.05;R.outputColorSpace=THREE.SRGBColorSpace;R.shadowMap.enabled=true;
+const S=new THREE.Scene();S.environment=new THREE.PMREMGenerator(R).fromScene(new RoomEnvironment(),.03).texture;
+const cam=new THREE.PerspectiveCamera(32,1,.1,200);
+const ctl=new OrbitControls(cam,cv);ctl.enableDamping=true;ctl.enablePan=false;ctl.autoRotate=true;ctl.autoRotateSpeed=1.2;ctl.minDistance=4;ctl.maxDistance=30;
+const key=new THREE.DirectionalLight('#fff',2.6);key.position.set(5,8,7);key.castShadow=true;key.shadow.mapSize.set(1024,1024);S.add(key);
+const rim=new THREE.DirectionalLight('#6FA8FF',1.6);rim.position.set(-7,3,-5);S.add(rim);
+S.add(new THREE.HemisphereLight('#cfe0ff','#1a1208',.5));
+
+const MAT={
+ navy:new THREE.MeshPhysicalMaterial({color:'#0A2350',metalness:.55,roughness:.28,clearcoat:1,clearcoatRoughness:.08}),
+ white:new THREE.MeshPhysicalMaterial({color:'#F4F6F9',metalness:.05,roughness:.25,clearcoat:1,sheen:.4}),
+ or:new THREE.MeshPhysicalMaterial({color:'#F26A1B',metalness:.15,roughness:.3,clearcoat:1,clearcoatRoughness:.1}),
+ steel:new THREE.MeshPhysicalMaterial({color:'#D7DEE8',metalness:1,roughness:.18})
+};
+const DEPTH=[.22,.32,.42];
+
+function buildMark(id){
+ const sym=document.getElementById(id),g=new THREE.Group();
+ const parts=[...sym.querySelectorAll('[data-z]')];
+ parts.forEach(el=>{
+  const z=+el.dataset.z,m=MAT[el.dataset.c];
+  const nodes=el.tagName==='g'?[...el.children]:[el];
+  nodes.forEach(n=>{
+   let d=n.getAttribute('d');
+   if(n.tagName==='circle'){const cx=+n.getAttribute('cx'),cy=+n.getAttribute('cy'),r=+n.getAttribute('r');d=`M${cx-r} ${cy}a${r} ${r} 0 1 0 ${2*r} 0a${r} ${r} 0 1 0 ${-2*r} 0Z`}
+   const data=new SVGLoader().parse(`<svg xmlns="http://www.w3.org/2000/svg"><path d="${d}"/></svg>`);
+   data.paths.forEach(p=>SVGLoader.createShapes(p).forEach(sh=>{
+    const geo=new THREE.ExtrudeGeometry(sh,{depth:DEPTH[z]*10,bevelEnabled:true,bevelThickness:.9,bevelSize:.7,bevelSegments:6,curveSegments:48});
+    const mesh=new THREE.Mesh(geo,m);mesh.castShadow=true;mesh.position.z=z*1.2;g.add(mesh);
+   }));
+  });
+ });
+ g.scale.set(.034,-.034,.034);const bb=new THREE.Box3().setFromObject(g),c=bb.getCenter(new THREE.Vector3());g.position.sub(c);
+ const wrap=new THREE.Group();wrap.add(g);wrap.rotation.set(-.12,.35,0);return wrap;
+}
+
+// процедурная автоцистерна
+function truckTex(id){
+ const c=document.createElement('canvas');c.width=1600;c.height=400;const x=c.getContext('2d');
+ x.fillStyle='#F4F6F9';x.fillRect(0,0,1600,400);
+ x.fillStyle='#0A2350';x.fillRect(0,300,1600,46);x.fillStyle='#F26A1B';x.fillRect(0,346,1600,16);
+ const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">${document.getElementById(id).innerHTML}</svg>`;
+ const img=new Image();const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=8;t.center.set(.5,.5);t.rotation=-Math.PI/2;t.repeat.set(1,2.2);t.offset.set(0,.1);
+ img.onload=()=>{x.drawImage(img,330,40,220,220);x.fillStyle='#0A2350';x.font='900 96px Unbounded, sans-serif';x.fillText('ЛИДЕР',580,150);x.fillStyle='#F26A1B';x.fillText('ТРАНС',580,250);x.fillStyle='#5B6577';x.font='800 30px Manrope, sans-serif';x.fillText('НАЛИВНЫЕ ПЕРЕВОЗКИ',584,292);t.needsUpdate=true};
+ img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg.replace(/var\(--c\d,([^)]+)\)/g,'$1'));
+ return t;
+}
+function buildTruck(id){
+ const T=new THREE.Group();
+ const paint=new THREE.MeshPhysicalMaterial({color:'#0A2350',metalness:.6,roughness:.3,clearcoat:1});
+ const chrome=new THREE.MeshPhysicalMaterial({color:'#E6EBF2',metalness:1,roughness:.12});
+ const rubber=new THREE.MeshStandardMaterial({color:'#15181D',roughness:.9});
+ // цистерна
+ const tankMat=new THREE.MeshPhysicalMaterial({map:truckTex(id),metalness:.35,roughness:.25,clearcoat:1});
+ const body=new THREE.Mesh(new THREE.CylinderGeometry(1.25,1.25,7,64,1,true),tankMat);body.rotation.z=Math.PI/2;body.position.set(-1.2,2.05,0);body.castShadow=true;T.add(body);
+ // зеркальная развёртка: текстура видна с одной стороны - поворачиваем трубу так, чтобы логотип смотрел на камеру
+ body.rotation.x=Math.PI*.5+.8;
+ [-4.7,2.3].forEach((x,i)=>{const cap=new THREE.Mesh(new THREE.SphereGeometry(1.25,48,32,0,Math.PI*2,0,Math.PI/2),chrome);cap.scale.y=.35;cap.rotation.z=i?-Math.PI/2:Math.PI/2;cap.position.set(x,2.05,0);T.add(cap)});
+ for(let i=0;i<4;i++){const ring=new THREE.Mesh(new THREE.TorusGeometry(1.27,.04,8,64),chrome);ring.rotation.y=Math.PI/2;ring.position.set(-4+i*1.9,2.05,0);T.add(ring)}
+ const hatch=new THREE.Mesh(new THREE.CylinderGeometry(.35,.35,.18,32),chrome);hatch.position.set(-1.2,3.35,0);T.add(hatch);
+ // рама и кабина
+ const frame=new THREE.Mesh(new THREE.BoxGeometry(10,.25,1.6),new THREE.MeshStandardMaterial({color:'#222831',roughness:.6}));frame.position.set(.2,.75,0);T.add(frame);
+ const cab=new THREE.Mesh(new RoundedBoxGeometry(2.1,2.5,2.4,6,.28),paint);cab.position.set(3.75,2.05,0);cab.castShadow=true;T.add(cab);
+ const glass=new THREE.Mesh(new RoundedBoxGeometry(.1,1,2.1,4,.04),new THREE.MeshPhysicalMaterial({color:'#9FC3E8',metalness:.2,roughness:.05,transmission:.2,clearcoat:1}));glass.position.set(4.82,2.65,0);T.add(glass);
+ const stripe=new THREE.Mesh(new THREE.BoxGeometry(2.12,.18,2.42),new THREE.MeshPhysicalMaterial({color:'#F26A1B',clearcoat:1,roughness:.3}));stripe.position.set(3.75,1.25,0);T.add(stripe);
+ const grill=new THREE.Mesh(new THREE.BoxGeometry(.06,.7,1.6),chrome);grill.position.set(4.82,1.55,0);T.add(grill);
+ // колёса
+ [[-4.2],[-3.1],[-2],[1.2],[3.9]].forEach(([x])=>[-1,1].forEach(s=>{const w=new THREE.Mesh(new THREE.CylinderGeometry(.55,.55,.42,40),rubber);w.rotation.x=Math.PI/2;w.position.set(x,.55,s*1.02);w.castShadow=true;T.add(w);const hub=new THREE.Mesh(new THREE.CylinderGeometry(.26,.26,.44,24),chrome);hub.rotation.x=Math.PI/2;hub.position.copy(w.position);T.add(hub)}));
+ // дорога
+ const road=new THREE.Mesh(new THREE.PlaneGeometry(60,8),new THREE.MeshStandardMaterial({color:'#1A1F27',roughness:.95}));road.rotation.x=-Math.PI/2;road.receiveShadow=true;T.add(road);
+ for(let i=-14;i<15;i++){const d=new THREE.Mesh(new THREE.PlaneGeometry(1.2,.12),new THREE.MeshStandardMaterial({color:'#E9E3D2'}));d.rotation.x=-Math.PI/2;d.position.set(i*2,.01,-3.2);T.add(d)}
+ T.position.y=-1.6;return T;
+}
+
+let spin=true;let cur=(location.hash.match(/m=([DEF])/)||[])[1]||'D',view=location.hash.includes('truck')?'truck':'logo',obj;
+function setScene(){
+ if(obj){S.remove(obj);obj.traverse(o=>{o.geometry&&o.geometry.dispose()})}
+ if(view==='logo'){obj=buildMark(cur);obj.position.x=innerWidth>900?3.1:0;obj.position.y=innerWidth>900?0:-.8;cam.position.set(0,.4,12);ctl.target.set(0,innerWidth>900?0:-.8,0);ctl.autoRotate=false;spin=true}
+ else{obj=buildTruck(cur);cam.position.set(2,2.6,17);ctl.target.set(-2.8,2.2,0);ctl.autoRotate=true;ctl.autoRotateSpeed=.5;spin=false}
+ S.add(obj);
+}
+function resize(){const r=cv.getBoundingClientRect();R.setSize(r.width,r.height,false);cam.aspect=r.width/r.height;cam.updateProjectionMatrix()}
+addEventListener('resize',resize);
+pick(cur);document.querySelectorAll('#segV button').forEach(x=>x.classList.toggle('on',x.dataset.v===view));resize();
+const clk=new THREE.Clock();R.setAnimationLoop(()=>{const t=clk.getElapsedTime();if(spin&&obj)obj.rotation.y=.3+Math.sin(t*.6)*.5;ctl.update();R.render(S,cam)});
+
+function pick(m){cur=m;
+ document.querySelectorAll('#segM button').forEach(b=>b.classList.toggle('on',b.dataset.m===m));
+ document.querySelectorAll('.mk').forEach(b=>b.classList.toggle('on',b.dataset.m===m));
+ document.querySelectorAll('use.u').forEach(u=>u.setAttribute('href','#'+m));
+ setScene()}
+document.querySelectorAll('#segM button').forEach(b=>b.onclick=()=>pick(b.dataset.m));
+document.querySelectorAll('.mk').forEach(b=>b.onclick=()=>{pick(b.dataset.m);scrollTo({top:0,behavior:'smooth'})});
+document.querySelectorAll('#segV button').forEach(b=>b.onclick=()=>{view=b.dataset.v;document.querySelectorAll('#segV button').forEach(x=>x.classList.toggle('on',x===b));setScene()});
+</script>
+</body>
+</html>
