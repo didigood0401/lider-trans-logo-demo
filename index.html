@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Лидер Транс - эскизы логотипа</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B2A55;--navy2:#123A72;--or:#F26A1B;--ink:#0E1624;--mut:#5B6577;--bg:#F4F5F7;--line:#E2E5EA}
+*{box-sizing:border-box;margin:0}
+body{font-family:Manrope,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header{background:var(--navy);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+header:after{content:"";position:absolute;right:-120px;top:0;bottom:0;width:520px;background:repeating-linear-gradient(-20deg,transparent 0 38px,rgba(242,106,27,.9) 38px 46px,transparent 46px 92px);opacity:.18}
+.tag{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#FFB585;font-weight:600}
+h1{font-family:Unbounded;font-weight:800;font-size:clamp(30px,5vw,54px);line-height:1.05;margin:14px 0 16px}
+header p{max-width:620px;color:#C9D4E6}
+h2{font-family:Unbounded;font-weight:600;font-size:24px;margin:0 0 6px}
+section{padding:56px 0}
+.lead{color:var(--mut);max-width:720px;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(0,0,0,.18)}
+.card.on{outline:3px solid var(--or)}
+.stage{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:26px}
+.stage svg{width:100%;height:100%}
+.card .meta{padding:16px 18px 20px;border-top:1px solid var(--line)}
+.card b{font-family:Unbounded;font-weight:600;font-size:15px}
+.card span{display:block;color:var(--mut);font-size:14px;margin-top:4px}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:18px}
+.tile{border-radius:16px;aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;padding:24px}
+.tile svg{width:100%;height:100%}
+.truck{background:linear-gradient(#DCE3EC,#EEF1F5 70%,#C9CFD8 70%);border-radius:16px;padding:20px;margin-top:18px}
+.truck svg{width:100%;height:auto;display:block}
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.biz{aspect-ratio:9/5;border-radius:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.35);overflow:hidden}
+.biz svg{width:100%;height:100%;display:block}
+.pal{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.sw{width:150px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff;font-size:13px}
+.sw i{display:block;height:70px}
+.sw div{padding:8px 10px}
+.plan{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.step em{font-style:normal;font-family:Unbounded;color:var(--or);font-size:13px}
+footer{padding:40px 0 60px;color:var(--mut);font-size:14px}
+.hint{font-size:13px;color:var(--mut);margin-top:10px}
+@media(max-width:860px){.grid,.row,.plan{grid-template-columns:1fr}.cards2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+<defs>
+ <!-- A: капля-дорога -->
+ <symbol id="mA" viewBox="0 0 120 132">
+  <path d="M60 4C60 4 16 56 16 86a44 44 0 0 0 88 0C104 56 60 4 60 4Z" fill="var(--c1,#0B2A55)"/>
+  <path d="M44 122L56 62h8L76 122Z" fill="var(--c3,#fff)"/>
+  <path d="M59 70h2v9h-2zM58.6 86h2.8v11h-2.8zM58 103h4v12h-4z" fill="var(--c2,#F26A1B)"/>
+  <path d="M30 58C40 40 52 24 60 14" stroke="var(--c2,#F26A1B)" stroke-width="7" stroke-linecap="round" fill="none"/>
+ </symbol>
+ <!-- B: монограмма ЛТ в движении -->
+ <symbol id="mB" viewBox="0 0 150 100">
+  <g transform="skewX(-14) translate(22 0)">
+   <path d="M30 14h44v16H60v58H45V30H43C42 58 36 80 22 88H12C26 76 30 52 30 14Z" fill="var(--c1,#0B2A55)"/>
+   <path d="M80 14h56v16h-20v58h-15V30H80Z" fill="var(--c2,#F26A1B)"/>
+  </g>
+  <path d="M2 50h22M8 62h16M14 74h10" stroke="var(--c2,#F26A1B)" stroke-width="5" stroke-linecap="round"/>
+ </symbol>
+ <!-- C: щит с цистерной -->
+ <symbol id="mC" viewBox="0 0 120 132">
+  <path d="M60 4l52 16v40c0 34-24 56-52 68C32 116 8 94 8 60V20Z" fill="var(--c1,#0B2A55)"/>
+  <rect x="22" y="66" width="76" height="24" rx="12" fill="var(--c3,#fff)"/>
+  <path d="M30 78h60" stroke="var(--c1,#0B2A55)" stroke-width="2" opacity=".35"/>
+  <path d="M60 24c0 0-14 16-14 26a14 14 0 0 0 28 0c0-10-14-26-14-26Z" fill="var(--c2,#F26A1B)"/>
+  <path d="M28 100h64M38 110h44" stroke="var(--c2,#F26A1B)" stroke-width="5" stroke-linecap="round"/>
+ </symbol>
+</defs>
+</svg>
+
+<header><div class="wrap">
+ <div class="tag">Эскизы логотипа · ООО «Лидер Транс»</div>
+ <h1>Надёжность и движение.<br>Три направления знака</h1>
+ <p>Перевозка наливных нефтепродуктов: знак должен читаться на цистерне с 50 метров, на пломбе, в путевом листе и в иконке приложения. Поэтому - простые формы, 2 фирменных цвета, без мелких деталей и градиентов.</p>
+</div></header>
+
+<section><div class="wrap">
+ <h2>Концепции</h2>
+ <p class="lead">Нажмите на вариант - примерки ниже перестроятся под него.</p>
+ <div class="grid" id="grid">
+  <div class="card on" data-m="mA"><div class="stage"><svg viewBox="0 0 360 150"><use href="#mA" x="0" y="8" width="120" height="132"/><text x="132" y="78" font-family="Unbounded" font-weight="800" font-size="30" fill="#0B2A55">ЛИДЕР</text><text x="132" y="112" font-family="Unbounded" font-weight="800" font-size="30" fill="#F26A1B">ТРАНС</text></svg></div>
+   <div class="meta"><b>A. Капля-дорога</b><span>Капля нефтепродукта, внутри - дорога, уходящая вперёд. Один знак рассказывает и о грузе, и о пути.</span></div></div>
+  <div class="card" data-m="mB"><div class="stage"><svg viewBox="0 0 360 150"><use href="#mB" x="0" y="20" width="160" height="107"/><text x="168" y="78" font-family="Unbounded" font-weight="800" font-size="28" fill="#0B2A55">ЛИДЕР</text><text x="168" y="110" font-family="Unbounded" font-weight="800" font-size="28" fill="#F26A1B">ТРАНС</text></svg></div>
+   <div class="meta"><b>B. Монограмма ЛТ</b><span>Развитие вашего наброска: наклон и линии скорости, но строгая геометрия - режется плоттером и не теряется в 16 px.</span></div></div>
+  <div class="card" data-m="mC"><div class="stage"><svg viewBox="0 0 360 150"><use href="#mC" x="0" y="8" width="120" height="132"/><text x="132" y="78" font-family="Unbounded" font-weight="800" font-size="30" fill="#0B2A55">ЛИДЕР</text><text x="132" y="112" font-family="Unbounded" font-weight="800" font-size="30" fill="#F26A1B">ТРАНС</text></svg></div>
+   <div class="meta"><b>C. Щит и цистерна</b><span>Щит - стандарты безопасности, цистерна и капля - профиль. Ближе всего к вашему референсу со щитом, но без перегруза.</span></div></div>
+ </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+ <h2>Знак на разных фонах</h2>
+ <div class="row" id="bgs">
+  <div class="tile" style="background:#fff;border:1px solid var(--line)"><svg viewBox="0 0 120 132"><use class="u" href="#mA"/></svg></div>
+  <div class="tile" style="background:var(--navy);--c1:#fff;--c3:#0B2A55"><svg viewBox="0 0 120 132"><use class="u" href="#mA"/></svg></div>
+  <div class="tile" style="background:var(--or);--c1:#fff;--c2:#0B2A55;--c3:#F26A1B"><svg viewBox="0 0 120 132"><use class="u" href="#mA"/></svg></div>
+ </div>
+ <p class="hint">Одноцветная версия для пломб, штампов и гравировки входит в пакет.</p>
+
+ <h2 style="margin-top:44px">Примерка на автоцистерне</h2>
+ <div class="truck"><svg viewBox="0 0 900 300">
+  <rect x="40" y="70" width="560" height="150" rx="75" fill="#F7F8FA" stroke="#B9C1CC" stroke-width="3"/>
+  <path d="M40 180h560" stroke="#0B2A55" stroke-width="18"/><path d="M40 200h560" stroke="#F26A1B" stroke-width="8"/>
+  <rect x="610" y="90" width="40" height="130" fill="#3A4251"/>
+  <path d="M650 220V110q0-30 30-30h90q30 0 46 40l34 70v30Z" fill="#0B2A55"/>
+  <path d="M690 96h70q18 0 28 26l14 34h-112Z" fill="#9DB4D4"/>
+  <rect x="650" y="196" width="200" height="10" fill="#F26A1B"/>
+  <g fill="#1C2230"><circle cx="130" cy="236" r="30"/><circle cx="200" cy="236" r="30"/><circle cx="480" cy="236" r="30"/><circle cx="740" cy="236" r="30"/></g>
+  <g fill="#8A93A3"><circle cx="130" cy="236" r="12"/><circle cx="200" cy="236" r="12"/><circle cx="480" cy="236" r="12"/><circle cx="740" cy="236" r="12"/></g>
+  <use class="u" href="#mA" x="150" y="84" width="80" height="88"/>
+  <text x="244" y="130" font-family="Unbounded" font-weight="800" font-size="31" fill="#0B2A55">ЛИДЕР ТРАНС</text>
+  <text x="246" y="156" font-family="Manrope" font-weight="600" font-size="16" fill="#5B6577">перевозка нефтепродуктов</text>
+  <text x="330" y="66" font-family="Manrope" font-weight="800" font-size="15" fill="#5B6577">ОГНЕОПАСНО · 1203</text>
+ </svg></div>
+
+ <h2 style="margin-top:44px">Визитка</h2>
+ <div class="cards2">
+  <div class="biz"><svg viewBox="0 0 900 500"><rect width="900" height="500" fill="#0B2A55"/><path d="M620 0h280v500H460Z" fill="#123A72"/><path d="M700 0h18L560 500h-18Z" fill="#F26A1B"/><g style="--c1:#fff;--c3:#0B2A55"><use class="u" href="#mA" x="80" y="120" width="190" height="210"/></g><text x="80" y="420" font-family="Unbounded" font-weight="800" font-size="46" fill="#fff">ЛИДЕР <tspan fill="#F26A1B">ТРАНС</tspan></text></svg></div>
+  <div class="biz"><svg viewBox="0 0 900 500"><rect width="900" height="500" fill="#fff"/><rect y="470" width="900" height="30" fill="#0B2A55"/><rect y="460" width="900" height="10" fill="#F26A1B"/><use class="u" href="#mA" x="740" y="50" width="100" height="110"/><text x="70" y="150" font-family="Unbounded" font-weight="600" font-size="38" fill="#0B2A55">Имя Фамилия</text><text x="70" y="196" font-family="Manrope" font-weight="600" font-size="26" fill="#5B6577">Руководитель логистики</text><text x="70" y="330" font-family="Manrope" font-weight="600" font-size="26" fill="#0E1624">+7 (000) 000-00-00</text><text x="70" y="372" font-family="Manrope" font-weight="600" font-size="26" fill="#0E1624">info@lidertrans.ru</text></svg></div>
+ </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+ <h2>Цвета</h2>
+ <div class="pal">
+  <div class="sw"><i style="background:#0B2A55"></i><div><b>Глубокий синий</b><br>#0B2A55 · надёжность</div></div>
+  <div class="sw"><i style="background:#F26A1B"></i><div><b>Сигнальный оранжевый</b><br>#F26A1B · движение</div></div>
+  <div class="sw"><i style="background:#0E1624"></i><div><b>Графит</b><br>#0E1624 · текст</div></div>
+  <div class="sw"><i style="background:#F4F5F7"></i><div><b>Светлый</b><br>#F4F5F7 · фон</div></div>
+ </div>
+ <p class="hint">Цвета взяты из вашего наброска «ЛТ» и сделаны чище - хорошо печатаются плёнкой на цистерне.</p>
+
+ <h2 style="margin-top:44px">Что входит</h2>
+ <div class="plan">
+  <div class="step"><em>01</em><p>3 концепции знака на выбор (как здесь), правки без ограничения</p></div>
+  <div class="step"><em>02</em><p>Доработка выбранного: пропорции, шрифт, цветная и одноцветная версии</p></div>
+  <div class="step"><em>03</em><p>Горизонтальная и вертикальная компоновка, иконка для соцсетей и сайта</p></div>
+  <div class="step"><em>04</em><p>SVG, PDF, PNG, CDR/AI для оклейки, мини-гайд по использованию</p></div>
+ </div>
+</div></section>
+
+<footer><div class="wrap">Эскизы подготовлены по описанию задания и приложенным референсам. Это рабочие наброски для обсуждения - финальный знак дорабатывается после вашего выбора.</div></footer>
+
+<script>
+const cards=document.querySelectorAll('.card');
+cards.forEach(c=>c.addEventListener('click',()=>{
+ cards.forEach(x=>x.classList.remove('on'));c.classList.add('on');
+ const m=c.dataset.m;
+ document.querySelectorAll('use.u').forEach(u=>{
+  u.setAttribute('href','#'+m);
+  const box=m==='mB'?[150,100]:[120,132];
+  const svg=u.ownerSVGElement;
+  if(svg.closest('.tile'))svg.setAttribute('viewBox','0 0 '+box.join(' '));
+ });
+}));
+</script>
+</body>
+</html>
